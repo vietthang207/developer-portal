@@ -3,7 +3,7 @@ sudo: required
 language: node_js
 
 node_js:
-  - node
+  - "8"
 
 script: 
   - echo "npm test temporarily disabled"
@@ -19,7 +19,7 @@ deploy:
     bucket: dev-developer.knstats.com
     region: ap-southeast-1
     acl: public_read
-    local_dir: website
+    local_dir: website/build
     on:
       branch: develop
   - provider: s3
@@ -28,6 +28,6 @@ deploy:
     bucket: dev-developer.knstats.com
     region: ap-southeast-1
     acl: public_read
-    local_dir: website
+    local_dir: website/build
     on:
       branch: master
