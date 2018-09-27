@@ -9,8 +9,8 @@ script:
   - echo "npm test temporarily disabled"
 
 install:
-  - cd website; npm ci
-  - cd website; npm run build 
+  - (cd website; npm ci)
+  - (cd website; npm run build)
 
 deploy:
   - provider: s3
