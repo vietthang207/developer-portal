@@ -7,8 +7,10 @@ node_js:
 
 script: 
   - echo "npm test temporarily disabled"
-  - echo "npm install temporarily disabled"
-install: true
+
+install:
+  - cd website; npm ci
+  - cd website; npm run build 
 
 deploy:
   - provider: s3
