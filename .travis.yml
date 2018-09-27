@@ -11,6 +11,10 @@ script:
 install:
   - (cd website; npm ci)
   - (cd website; npm run build)
+  - pwd
+  - ls
+  - ls website
+  - ls website/build
 
 deploy:
   - provider: s3
@@ -19,7 +23,7 @@ deploy:
     bucket: dev-developer.knstats.com
     region: ap-southeast-1
     acl: public_read
-    local_dir: website/build
+    local_dir: website/build/kyberdeveloper
     on:
       branch: develop
   - provider: s3
@@ -28,6 +32,6 @@ deploy:
     bucket: dev-developer.knstats.com
     region: ap-southeast-1
     acl: public_read
-    local_dir: website/build
+    local_dir: website/build/kyberdeveloper
     on:
       branch: master
